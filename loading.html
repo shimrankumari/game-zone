@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Loading...</title>
+
+  <style>
+    body {
+      margin: 0;
+      background: linear-gradient(135deg, #000428, #004e92, #00c6ff);
+      color: white;
+      text-align: center;
+      font-family: Arial;
+    }
+
+    h1 {
+      margin-top: 150px;
+    }
+
+    .bar {
+      width: 60%;
+      height: 25px;
+      border: 2px solid white;
+      margin: 30px auto;
+      border-radius: 20px;
+      overflow: hidden;
+    }
+
+    .progress {
+      height: 100%;
+      width: 0%;
+      background: #00c6ff;
+    }
+
+    #percent {
+      font-size: 25px;
+    }
+  </style>
+
+  <script>
+    let p = 0;
+    function load() {
+      let bar = document.getElementById("progress");
+      let text = document.getElementById("percent");
+
+      let interval = setInterval(function() {
+        p++;
+        bar.style.width = p + "%";
+        text.innerHTML = p + "%";
+
+        if (p >= 100) {
+          clearInterval(interval);
+          window.location.href = "game.html";
+        }
+      }, 30);
+    }
+  </script>
+
+</head>
+
+<body onload="load()">
+
+<h1>Loading Game... 🎮</h1>
+
+<div class="bar">
+  <div class="progress" id="progress"></div>
+</div>
+
+<div id="percent">0%</div>
+
+</body>
+</html>
