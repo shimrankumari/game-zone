@@ -42,7 +42,24 @@
       background: #00c6ff;
       cursor: pointer;
       margin-top: 20px;
-    }
+    }img:hover {
+  transform: scale(1.05);
+  transition: 0.3s;
+}
+
+button:hover {
+  box-shadow: 0 0 20px #00c6ff;
+  transform: scale(1.1);
+}
+
+h1 {
+  animation: glow 2s infinite alternate;
+}
+
+@keyframes glow {
+  from { text-shadow: 0 0 10px #00c6ff; }
+  to { text-shadow: 0 0 20px #00c6ff; }
+}
   </style>
 </head>
 
